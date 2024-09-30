@@ -99,4 +99,29 @@ class ItemIndex(BaseModel):
     price: float
     tax: float | None = None
     tags: list[str] = []
-    
+
+class FirstItemIndex(BaseModel):
+    name:str
+    description :str |None=None
+    price:float 
+    tax:float |None=None
+    tags:list[str]=[]
+
+class UserIn(BaseModel):
+    username:str
+    password:str
+    email: str
+    full_name: str | None = None
+
+class UserOut(BaseModel):
+    username: str
+    email: str
+    full_name: str | None = None
+
+class BaseUser(BaseModel):
+    username:str
+    email:str
+    full_name: str | None = None
+
+class UserPasswordIn(BaseModel):
+    password:str
