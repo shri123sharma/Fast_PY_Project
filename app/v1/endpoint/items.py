@@ -19,13 +19,17 @@ def read_item():
 def read_item(item_id:int):
     return {"item_id":item_id}
 
-@router.get("/get_models/model_name")
+@router.get("/get_models/{model_name}")
 def get_model(model_name:ModelName):
     if model_name is ModelName.alexnet:
         return {"model_name": model_name, "message": "Deep Learning FTW!"}
 
     if model_name.value == "lenet":
-        return {"model_name": model_name, "message": "LeCNN all the images"}
+        response = {
+            "model_name": model_name,
+            "message": f"LeCNN all the {model_name} images"  # Ensure you have a space after 'all the'
+        }
+        return  response
     
     return {"model_name": model_name, "message": "Have some residuals"}
 

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.v1.endpoint import items,products,cookies,headers,item_indexs,users
+from app.v1.endpoint import items,products,cookies,headers,item_indexs,users,forms
 
 app=FastAPI()
 
@@ -9,6 +9,7 @@ app.include_router(cookies.router,prefix="/cookies",tags=["cookies"])
 app.include_router(headers.router,prefix="/headers",tags=["headers"])
 app.include_router(item_indexs.router,prefix="/items_indexs",tags=["items_index"])
 app.include_router(users.router,prefix="/users",tags=["users"])
+app.include_router(forms.router,prefix="/forms",tags=["forms"])
 
 @app.get("/")
 def default_run_project():

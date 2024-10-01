@@ -6,6 +6,3 @@ __pycache__/
 
 # Ignore compiled Python files
 *.pyc
-
-# Ignore cache directories
-__pycache__/

@@ -1,5 +1,6 @@
-from pydantic import BaseModel,Field,HttpUrl
+from pydantic import BaseModel,Field,HttpUrl,EmailStr
 from typing import Annotated, Literal,Union,List
+import datetime
 
 class Item(BaseModel):
     item_name:str
@@ -125,3 +126,67 @@ class BaseUser(BaseModel):
 
 class UserPasswordIn(BaseModel):
     password:str
+
+class ItemModel(BaseModel):
+    name: str
+    description: str | None = None
+    price: float
+    tax: float = 10.5
+    tags: list[str] = []
+
+class UserIn(BaseModel):
+    username:str
+    password:str
+    email:EmailStr
+    full_name: str | None = None
+
+class UserOut(BaseModel):
+    username:str
+    email:EmailStr
+    full_name: str | None = None
+
+class UserInDB(BaseModel):
+    username: str
+    hashed_password: str
+    email: EmailStr
+    full_name: str | None = None
+
+class UserBase(BaseModel):
+    username:str
+    email:EmailStr
+    full_name: str | None = None
+
+class UserIn1(UserBase):
+    password:str
+
+class UserOut1(UserBase):
+    pass
+
+class UserInDB1(UserBase):
+    hashed_password: str
+
+# Define the BaseItem model
+class BaseItem(BaseModel):
+    id: int
+    name: str
+
+# Define the Car model that inherits from BaseItem
+class CarItem(BaseItem):
+    wheels: int
+    engine: str
+
+# Define the Plane model that inherits from BaseItem
+class PlaneItem(BaseItem):
+    wingspan: float
+    engines: int
+
+class PostItem(BaseModel):
+    post_name:str
+    post_description:str | None=None
+    post_type:str
+    post_location:str
+
+class FormData(BaseModel):
+    username:str
+    password:str
+
