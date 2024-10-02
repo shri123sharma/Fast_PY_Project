@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from typing import Annotated,Optional,Any
-from app.v1.models import ItemIndex,FirstItemIndex
+from app.v1.schemas import ItemIndex,FirstItemIndex
 
 router=APIRouter()
 

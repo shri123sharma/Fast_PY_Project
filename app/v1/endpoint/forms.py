@@ -1,6 +1,7 @@
 from fastapi import APIRouter,Form,status
 from typing_extensions import Annotated
-from app.v1.models import *
+from app.v1.schemas import *
+from fastapi import FastAPI,File,UploadFile
 
 router=APIRouter()
 
@@ -19,3 +20,7 @@ async def get_form_data(
     ):
     form_data = FormData(username=username, password=password)
     return form_data
+
+@router.post("/uploadfile")
+async def create_upload_file(file:UploadFile):
+    return {"filename":file.filename}

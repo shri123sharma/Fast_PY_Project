@@ -1,5 +1,5 @@
 from fastapi import Query,Path
-from app.v1.models import Product,Item,User,ItemProduct,Post,BookSummary,FirstItem,SecondItem
+from app.v1.schemas import Product,Item,User,ItemProduct,Post,BookSummary,FirstItem,SecondItem
 from typing import Annotated,List
 from fastapi import APIRouter,Body
 from datetime import datetime,time,timedelta
