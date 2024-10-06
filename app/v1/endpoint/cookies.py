@@ -1,5 +1,5 @@
 from fastapi import APIRouter,Cookie,Response,Header
-from app.v1.models import Cookies
+from app.v1.schemas import Cookies
 from typing import Annotated,Optional
 
 

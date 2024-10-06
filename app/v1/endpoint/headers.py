@@ -1,5 +1,5 @@
 from fastapi import APIRouter,Body,Cookie,Header,Response
-from app.v1.models import CommonHeaders
+from app.v1.schemas import CommonHeaders
 from typing import Annotated,Optional,List
 
 router=APIRouter()

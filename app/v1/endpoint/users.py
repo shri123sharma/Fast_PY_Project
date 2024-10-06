@@ -1,6 +1,6 @@
 from fastapi import APIRouter,Response
 from typing import Annotated,Optional,Any
-from app.v1.models import *
+from app.v1.schemas import *
 from fastapi.responses import JSONResponse,RedirectResponse
 from app.v1.utils import fake_save_user
 from typing import Union

@@ -1,4 +1,4 @@
-from app.v1.models import *
+from app.v1.schemas import *
 
 def fake_password_hasher(raw_password: str):
     return "supersecret" + raw_password

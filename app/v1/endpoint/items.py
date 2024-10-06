@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from enum import Enum
-from app.v1.models import Item,FilterParams
+from app.v1.schemas import Item,FilterParams
 from typing import Annotated
 from fastapi import Query,Path
 
